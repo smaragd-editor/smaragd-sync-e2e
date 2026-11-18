@@ -744,7 +744,7 @@ dependencies = [
  "arrayvec",
  "cc",
  "cfg-if",
- "constant_time_eq",
+ "constant_time_eq 0.4.2",
  "cpufeatures 0.3.1",
 ]
 
@@ -1227,6 +1227,15 @@ name = "constant_time_eq"
 version = "0.4.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "3d52eff69cd5e647efe296129160853a42795992097e8af39800e1060caeea9b"
+
+[[package]]
+name = "constant_time_eq"
+version = "0.6.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "9eb6feb175df65d0a3ccd3e73484e940d0ac664e8034f0519fd49a93db3071d9"
+dependencies = [
+ "rustversion",
+]
 
 [[package]]
 name = "convert_case"
@@ -4537,6 +4546,18 @@ dependencies = [
 ]
 
 [[package]]
+name = "nix"
+version = "0.32.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "77730ed34f01f4990cb2ea67fec715ecebc6fab9a6396cf83c5529b13f581bdc"
+dependencies = [
+ "bitflags 2.13.2",
+ "cfg-if",
+ "cfg_aliases",
+ "libc",
+]
+
+[[package]]
 name = "nohash-hasher"
 version = "0.2.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -6767,8 +6788,8 @@ dependencies = [
 
 [[package]]
 name = "smaragd"
-version = "1.6.1"
-source = "git+https://github.com/smaragd-editor/smaragd#79b3d01e3af82b0ceb9511dec14834e425f3b76c"
+version = "1.6.2"
+source = "git+https://github.com/smaragd-editor/smaragd#6ba164cd3295502f0be7dee75b3b44bca27e9161"
 dependencies = [
  "arboard",
  "argon2",
@@ -6816,7 +6837,7 @@ dependencies = [
  "winresource",
  "yrs",
  "zeroize",
- "zip 8.6.0",
+ "zip 9.7.0",
 ]
 
 [[package]]
@@ -6833,7 +6854,7 @@ dependencies = [
 [[package]]
 name = "smaragd-sync-protocol"
 version = "0.1.0"
-source = "git+https://github.com/smaragd-editor/smaragd-sync#2c97863f7b51f87f3bea75bff0822dd3e2b6ed54"
+source = "git+https://github.com/smaragd-editor/smaragd-sync#0a098086210aa39cd5540c6465b21590a08e81ee"
 dependencies = [
  "base64 0.23.1",
  "bs58",
@@ -7790,6 +7811,12 @@ name = "typed-path"
 version = "0.12.4"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "54ec2755506471f54baf5e4bb5499d8e510cc1caf271270e778a736bd2d7336c"
+
+[[package]]
+name = "typed-path"
+version = "0.13.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "9ce898823d8cd0f028662d2f349694b1af0a5cc9be83f1d213a00d3147445e1e"
 
 [[package]]
 name = "typenum"
@@ -9921,7 +9948,27 @@ dependencies = [
  "flate2",
  "indexmap",
  "memchr",
- "typed-path",
+ "typed-path 0.12.4",
+ "zopfli",
+]
+
+[[package]]
+name = "zip"
+version = "9.7.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "08687262e7c0f1284b259686f322805a8adaa8ef4d7210e76448950b3f083bf7"
+dependencies = [
+ "constant_time_eq 0.6.1",
+ "crc32fast",
+ "flate2",
+ "getrandom 0.4.3",
+ "indexmap",
+ "libc",
+ "memchr",
+ "nix",
+ "typed-path 0.13.0",
+ "windows-sys 0.61.2",
+ "zeroize",
  "zopfli",
 ]
 
